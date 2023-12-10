@@ -9,6 +9,9 @@ public class LoadingScreen : MonoBehaviour
     public Slider progressSlider;
 
     public GameObject MainMenuCanvas; 
+    
+  
+
  
     public void LoadScene(int index)
     {
@@ -38,4 +41,6 @@ public class LoadingScreen : MonoBehaviour
             yield return null;
         }
     }
+
+   
 }
