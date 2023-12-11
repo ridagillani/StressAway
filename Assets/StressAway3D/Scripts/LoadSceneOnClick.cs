@@ -10,8 +10,15 @@ public class LoadSceneOnClick : MonoBehaviour
     public GameObject signUpPanel;
     public GameObject signInPanel;
     public GameObject accountPanel;
+    public Button manageAccount;
+    public Button newGame;
+
     public GameObject audioPanel;
     public GameObject graphicsPanel;
+
+    public GameObject mainMenu;
+    public GameObject gameMenu;
+    public GameObject optionsMenu;
 
     // public Color greenColor = new Color(0,200,92);
     // public Color blueColor = new Color(0,169,92);
@@ -44,9 +51,6 @@ public class LoadSceneOnClick : MonoBehaviour
          signUpPanel.SetActive(false);
          signInPanel.SetActive(false);
         reportPanels.SetActive(true);
-        // reportButton.GetComponent<Image>().color = orangeColor;
- 
-        
     }
 
      public void newGamePan()
@@ -82,5 +86,26 @@ public class LoadSceneOnClick : MonoBehaviour
         audioPanel.SetActive(false);
         accountPanel.SetActive(false);
         graphicsPanel.SetActive(true);
+    }
+
+    public void mainMenuf()
+    {
+        gameMenu.SetActive(false);
+        optionsMenu.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+    public void gameMenuf()
+    {
+        newGame.Select();
+        optionsMenu.SetActive(false);
+        mainMenu.SetActive(false);
+        gameMenu.SetActive(true);
+    }
+     public void optionsMenuf()
+    {
+        manageAccount.Select();
+        mainMenu.SetActive(false);
+        gameMenu.SetActive(false);
+        optionsMenu.SetActive(true);
     }
 }
