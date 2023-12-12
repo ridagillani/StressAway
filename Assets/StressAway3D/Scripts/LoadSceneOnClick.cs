@@ -10,8 +10,12 @@ public class LoadSceneOnClick : MonoBehaviour
     public GameObject signUpPanel;
     public GameObject signInPanel;
     public GameObject accountPanel;
+    public GameObject pausePanel;
+
     public Button manageAccount;
     public Button newGame;
+    public Button pauseButton;
+
 
     public GameObject audioPanel;
     public GameObject graphicsPanel;
@@ -20,15 +24,9 @@ public class LoadSceneOnClick : MonoBehaviour
     public GameObject gameMenu;
     public GameObject optionsMenu;
 
-    // public Color greenColor = new Color(0,200,92);
-    // public Color blueColor = new Color(0,169,92);
-    // public Color orangeColor = new Color(0.3f, 0.4f, 0.6f, 0.9f);
-
-
-
-    public void LoadSceneByName()
+    public void LoadMainMenu()
     {
-        SceneManager.LoadScene("SceneNameHere");
+        SceneManager.LoadScene(0);
     }
 
     public void PlayGame()
@@ -107,5 +105,25 @@ public class LoadSceneOnClick : MonoBehaviour
         mainMenu.SetActive(false);
         gameMenu.SetActive(false);
         optionsMenu.SetActive(true);
+    }
+    public void pauseClicked()
+    {
+        pauseButton.Select();
+    }
+    public void resumeClicked()
+    {
+        pausePanel.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            pausePanel.SetActive(true);
+            Debug.Log(Time.timeScale);
+            Time.timeScale = 0;
+            Debug.Log(Time.timeScale);
+            Cursor.visible = true;
+        }
     }
 }
