@@ -112,6 +112,7 @@ public class LoadSceneOnClick : MonoBehaviour
     }
     public void resumeClicked()
     {
+        Time.timeScale = 1;
         pausePanel.SetActive(false);
     }
 
