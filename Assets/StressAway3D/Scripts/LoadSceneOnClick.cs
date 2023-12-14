@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class LoadSceneOnClick : MonoBehaviour
 {
@@ -11,6 +13,11 @@ public class LoadSceneOnClick : MonoBehaviour
     public GameObject signInPanel;
     public GameObject accountPanel;
     public GameObject pausePanel;
+    public GameObject errorPanel;
+    public GameObject storyPanel;
+
+    int _messageCounter = 0;
+    [SerializeField] TextMeshProUGUI dialogue;
 
     public Button manageAccount;
     public Button newGame;
@@ -115,6 +122,10 @@ public class LoadSceneOnClick : MonoBehaviour
         Time.timeScale = 1;
         pausePanel.SetActive(false);
     }
+     public void tryClicked()
+    {
+        errorPanel.SetActive(false);
+    }
 
     private void Update()
     {
@@ -126,5 +137,15 @@ public class LoadSceneOnClick : MonoBehaviour
             Debug.Log(Time.timeScale);
             Cursor.visible = true;
         }
+        // if (Input.GetKeyDown(KeyCode.Return)){
+        //    if (_messageCounter == 0) {
+        //        dialogue.text = "You've just woken up to a blaring alarm in a slightly messy room. Oh no! You're running late, and there's a big exam in just 40 minutes! Yikes!" ;
+        //     storyPanel.SetActive(false);
+        //    } 
+        // //    else if (_messageCounter == 1) {
+        // //        dialogue.text = "The room feels tense, and you know you're not ready. Your task is simple but speedy: grab your important stuff - ID card, admit card, notes, and pens - in just 15 seconds. ";
+        // //        _messageCounter++;
+        // //    }
+        // }
     }
 }
